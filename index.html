@@ -40,12 +40,28 @@
                     navLinks.classList.toggle('active');
                 });
             }
+            
+            // Word animation for hero section
+            const words = ["memorable", "impactful", "distinctive", "meaningful", "unforgettable", "authentic"];
+            let wordIndex = 0;
+            const animatedWord = document.getElementById('animated-word');
+            
+            if (animatedWord) {
+                setInterval(() => {
+                    animatedWord.classList.add('hidden');
+                    setTimeout(() => {
+                        wordIndex = (wordIndex + 1) % words.length;
+                        animatedWord.textContent = words[wordIndex];
+                        animatedWord.classList.remove('hidden');
+                    }, 500);
+                }, 5000);
+            }
         });
     </script>
 
 <section class="hero container mx-auto">
     <div class="hero-left">
-        <h1>Brands are visible.<br>But not always memorable</h1>
+        <h1>Brands are visible.<br>But not always <span id="animated-word" class="word-animation">memorable</span></h1>
     </div>
     <div class="hero-right">
         <!-- <p class="hero-desc">There's so much noise in the space where brands try to build their voices. We have a

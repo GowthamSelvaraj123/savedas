@@ -3478,3 +3478,14 @@ span.copy-right-icon {
     .testimonial-body { margin-bottom: 40px; }
     .scroll-bar { width: 150px; }
 }
+
+/* Word Animation */
+.word-animation {
+    display: inline-block;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.word-animation.hidden {
+    opacity: 0;
+    transform: translateY(5px);
+}

@@ -210,10 +210,10 @@ a.logo {
 
 .hero-left h1 {
     font-size: 4rem;
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.1;
-    letter-spacing: -0.04em;
-    max-width: 800px;
+    letter-spacing:0;
+    max-width: 840px;
 }
 
 .hero-right {
@@ -305,10 +305,14 @@ a.logo {
     white-space: nowrap;
     animation: marquee 20s linear infinite;
     gap: 4rem;
+    font-size: 0;
+}
+
+.marquee-content span {
+    display: inline-flex;
     font-size: 24px;
     font-weight: 600;
 }
-
 
 @keyframes marquee {
     0% { transform: translateX(0); }
@@ -492,7 +496,7 @@ a.logo {
 
 .service-card-content h4 {
     font-size: 1.3rem;
-    font-weight: 700;
+    font-weight: 500;
     margin-bottom: 0.5rem;
     transition: transform 0.3s ease;
 }
@@ -1367,8 +1371,8 @@ font-size: 110px;
 
 .approach-title {
     font-size: 80px;
-    font-weight: 800;
-    letter-spacing: -0.04em;
+    font-weight: 600;
+    letter-spacing:0px;
     margin-bottom: 20px;
     color: black;
 }
@@ -1384,7 +1388,6 @@ font-size: 110px;
 .approach-steps {
     display: flex;
     gap: 15px;
-    height: 480px;
     margin-bottom: 20px;
 }
 
@@ -1396,19 +1399,19 @@ font-size: 110px;
     flex: 1;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     overflow: hidden;
     cursor: pointer;
     transition: flex 0.5s ease;
     height: 550px;
 }
 
-.approach-step.active,
 .approach-step:hover {
     flex: 2.8;
 }
 
 .step-header {
-    margin-bottom: auto;
+    margin-bottom: 1.75rem;
     min-width: 200px;
 }
 
@@ -1421,27 +1424,29 @@ font-size: 110px;
 }
 
 .approach-step h3 {
-font-size: 36px;
+    font-size: 36px;
     font-weight: 500;
     margin: 0;
-    line-height: 45px;
-    white-space: nowrap;
+    line-height: 1.05;
+    white-space: normal;
+    transition: font-size 0.3s ease, line-height 0.3s ease, font-weight 0.3s ease;
 }
-.approach-step.active h3{
-    font-size: 69px;
-    font-weight: bold;
-    line-height: 77px;
+
+.approach-step:hover h3 {
+    font-size: 68px;
+    font-weight: 700;
+    line-height: 0.95;
 }
 
 .step-content {
     opacity: 0;
     transition: opacity 0.3s ease;
-    width: 350px;
+    width: 100%;
+    max-width: 420px;
     pointer-events: none;
     max-height: 0;
 }
 
-.approach-step.active .step-content,
 .approach-step:hover .step-content {
     opacity: 1;
     pointer-events: auto;
@@ -1451,28 +1456,29 @@ font-size: 36px;
 
 .step-content p {
     font-size: 16px;
-    line-height: 25px;
-    color: white;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.95);
     margin-bottom: 20px;
     white-space: normal;
 }
 
 .step-content ul {
     list-style: none;
-    padding-left: 0;
-    margin: 40px 0px 0px 0px;
+    padding-left: 1.3rem;
+    margin: 24px 0 0;
 }
 
 .step-content li {
     font-size: 16px;
     font-weight: bold;
-    margin-bottom: 5px;
-    white-space: nowrap;
+    margin-bottom: 14px;
+    white-space: normal;
 }
 
 .step-content li::before {
     content: "•";
-    margin-right: 8px;
+    margin-right: 10px;
+    color: white;
 }
 
 .approach-hint {
@@ -2918,7 +2924,7 @@ span.copy-right-icon {
     background: transparent;
     color: white;
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -2934,7 +2940,8 @@ span.copy-right-icon {
 
 .contact-views {
     position: relative;
-    padding:0px 30px
+    padding:0px 30px;
+    min-height: 840px;
 }
 
 .contact-view {
@@ -2966,7 +2973,7 @@ span.copy-right-icon {
 
 .contact-info h2 {
     font-size: 48px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 60px;
     margin-bottom: 15px;
 }
@@ -3284,7 +3291,8 @@ span.copy-right-icon {
     .show-reel h2 { font-size: 32px !important; }
     .show-reel-overlay h2 { font-size: 28px !important; }
     .marquee-section { margin-top: 30px; padding: 10px 0; }
-    .marquee-content { font-size: 15px; gap: 1.5rem; }
+    .marquee-content { font-size: 0; gap: 1.5rem; }
+    .marquee-content span { font-size: 15px; }
     
     .manifesto { padding: 30px 20px; text-align: center; }
     .manifesto h2 { font-size: 30px !important; line-height: 1.25 !important; margin-bottom: 15px; letter-spacing: -0.5px; }
@@ -3452,9 +3460,7 @@ span.copy-right-icon {
     .approach-steps { display: flex; flex-direction: column; height: auto; gap: 15px; }
     .approach-step { padding: 20px; }
     .approach-step h3 { font-size: 24px !important; line-height: 30px; }
-    .approach-step.active h3 { font-size: 32px !important; line-height: 36px; }
-    .step-content { width: auto; max-height: none !important; opacity: 1 !important; pointer-events: auto !important; margin-top: 15px; display: none; }
-    .approach-step.active .step-content { display: block; }
+    .step-content { width: auto; max-height: none !important; opacity: 1 !important; pointer-events: auto !important; margin-top: 15px; display: block; }
     .step-content p, .step-content li { font-size: 15px; line-height: 22px; }
     
     .large-quote { padding: 40px 15px 0; }

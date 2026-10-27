@@ -1337,7 +1337,6 @@ a.logo {
     left: 30px;
     font-size: 20px;
     font-weight: 600;
-    text-transform: lowercase;
     color: white;
     transition: opacity 0.3s ease, transform 0.3s ease;
     opacity: 1;
